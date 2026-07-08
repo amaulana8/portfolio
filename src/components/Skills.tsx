@@ -1,22 +1,32 @@
 import { motion } from "framer-motion";
 
-const skills = [
-  { name: "React / Next.js", level: 90 },
-  { name: "TypeScript", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Tailwind CSS", level: 90 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "Docker / DevOps", level: 70 },
+const categories = [
+  {
+    title: "Infrastructure",
+    skills: ["Linux Server (Debian/Ubuntu)", "Firewall (iptables/nftables)", "DNS (Bind/Technitium)", "Virtualisasi (Proxmox)", "Container (Docker)", "Reverse Proxy (Caddy/Nginx)", "VPN & WireGuard", "Monitoring (Grafana/Prometheus/Zabbix)"],
+  },
+  {
+    title: "Storage & Services",
+    skills: ["Object Storage (S3/MinIO)", "NAS (TrueNAS/OpenMediaVault)", "File Sharing (Nextcloud)", "Chat Server (Matrix/Simplex)", "Database (PostgreSQL/MySQL)", "Web Server (Caddy/Nginx/Apache)"],
+  },
+  {
+    title: "Networking & Security",
+    skills: ["MikroTik RouterOS", "Routing & Bridging", "VLAN & QoS", "CCTV Systems", "CrowdSec / Fail2Ban", "SSL/TLS Certificates"],
+  },
+  {
+    title: "Tools & Automation",
+    skills: ["Git / GitHub", "CI/CD (GitHub Actions)", "Ansible", "Bash Scripting", "Docker Compose", "n8n (Automation)"],
+  },
 ];
 
 const container = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const item = {
-  hidden: { opacity: 0, x: -30 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 export default function Skills() {
@@ -29,30 +39,33 @@ export default function Skills() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-10 max-w-4xl mx-auto"
+        className="relative z-10 max-w-5xl mx-auto"
       >
         <motion.p variants={item} className="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-4">
-          Skills
+          Skills & Expertise
         </motion.p>
-        <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-16">
-          Tech stack & <span className="text-gradient-accent">expertise</span>
+        <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4">
+          What I <span className="text-gradient-accent">do</span>
         </motion.h2>
+        <motion.p variants={item} className="text-white/40 mb-16 max-w-xl">
+          Infrastructure, networking, system administration, and automation.
+        </motion.p>
 
-        <div className="space-y-6">
-          {skills.map((skill) => (
-            <motion.div key={skill.name} variants={item} className="group">
-              <div className="flex justify-between mb-2">
-                <span className="text-sm font-medium">{skill.name}</span>
-                <span className="text-xs text-white/40">{skill.level}%</span>
-              </div>
-              <div className="h-2 bg-white/5 rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 }}
-                />
+        <div className="grid md:grid-cols-2 gap-8">
+          {categories.map((cat, i) => (
+            <motion.div
+              key={i}
+              variants={item}
+              className="p-6 rounded-xl bg-white/[0.03] border border-white/10"
+            >
+              <h3 className="text-emerald-400 font-mono text-sm tracking-wider mb-4">{cat.title}</h3>
+              <div className="space-y-2">
+                {cat.skills.map((s) => (
+                  <div key={s} className="flex items-center gap-2 text-sm text-white/60">
+                    <div className="w-1 h-1 rounded-full bg-emerald-500/60" />
+                    {s}
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}

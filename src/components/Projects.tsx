@@ -3,21 +3,21 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Project One",
-    desc: "A modern web application built with React and Node.js, featuring real-time updates and a sleek interface.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "Infrastructure Monitoring",
+    desc: "Monitoring stack Grafana + Prometheus + Zabbix untuk memantau server, network, dan layanan secara real-time dengan alerting via Telegram.",
+    tags: ["Grafana", "Prometheus", "Zabbix", "Docker"],
     gradient: "from-emerald-500/20 to-cyan-500/10",
   },
   {
-    title: "Project Two",
-    desc: "Scalable microservices architecture handling thousands of requests per second with high availability.",
-    tags: ["TypeScript", "Docker", "AWS"],
+    title: "Self-Hosted Cloud Platform",
+    desc: "Platform cloud pribadi: Proxmox VE, object storage MinIO (S3-compatible), Nextcloud, Matrix chat, dan automation workflow.",
+    tags: ["Proxmox", "MinIO", "Nextcloud", "Docker"],
     gradient: "from-purple-500/20 to-pink-500/10",
   },
   {
-    title: "Project Three",
-    desc: "Full-stack dashboard with interactive data visualization and real-time analytics pipeline.",
-    tags: ["React", "Python", "Redis"],
+    title: "Network Infrastructure",
+    desc: "Desain dan implementasi jaringan enterprise: MikroTik routing, VPN/WireGuard, VLAN segmentation, firewall policy, dan QoS.",
+    tags: ["MikroTik", "WireGuard", "Firewall", "VLAN"],
     gradient: "from-orange-500/20 to-amber-500/10",
   },
 ];
@@ -48,10 +48,10 @@ export default function Projects() {
           Projects
         </motion.p>
         <motion.h2 variants={cardItem} className="text-4xl md:text-5xl font-bold mb-4">
-          Featured <span className="text-gradient-accent">work</span>
+          What I've <span className="text-gradient-accent">built</span>
         </motion.h2>
         <motion.p variants={cardItem} className="text-white/40 mb-16 max-w-xl">
-          A selection of projects I've built with passion and attention to detail.
+          Infrastructure projects I've designed, deployed, and maintained.
         </motion.p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,7 +69,6 @@ export default function Projects() {
                     <div className="w-5 h-5 rounded-full bg-emerald-400/50" />
                   </div>
                   <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Github className="w-4 h-4 text-white/40 hover:text-white cursor-pointer" />
                     <ExternalLink className="w-4 h-4 text-white/40 hover:text-white cursor-pointer" />
                   </div>
                 </div>

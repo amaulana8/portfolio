@@ -17,10 +17,7 @@ const item = {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/20 via-black to-black" />
-
-      {/* Subtle grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <motion.div
@@ -30,24 +27,24 @@ export default function Hero() {
         className="relative z-10 text-center px-6 max-w-4xl mx-auto"
       >
         <motion.p variants={item} className="text-emerald-400 font-mono text-sm tracking-widest uppercase mb-6">
-          Creative Developer
+          Infrastructure & Network Engineer
         </motion.p>
 
         <motion.h1
           variants={item}
           className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
         >
-          <span className="text-gradient">Building digital</span>
+          <span className="text-gradient">Memet</span>
           <br />
-          <span className="text-gradient-accent">experiences.</span>
+          <span className="text-gradient-accent">Sysadmin & Network Engineer</span>
         </motion.h1>
 
         <motion.p
           variants={item}
           className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
         >
-          Full-stack developer crafting high-performance, scalable solutions
-          with modern technologies.
+          15+ years of experience in networking, infrastructure, and system administration.
+          Building and maintaining reliable, secure, and scalable server systems.
         </motion.p>
 
         <motion.div variants={item} className="mt-10 flex items-center justify-center gap-4">
@@ -66,7 +63,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
