@@ -27,5 +27,9 @@ npm run dev
 npm run build
 ```
 
+## Credit
+
+Project ini adalah improved version dari [achyuthkp27/Portfolio](https://github.com/achyuthkp27/Portfolio). Terima kasih kepada Achyuth KP untuk base yang keren.
+
 ## Deploy
 Push ke branch `main`, GitHub Actions otomatis deploy ke GitHub Pages.
