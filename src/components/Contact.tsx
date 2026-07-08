@@ -1,16 +1,10 @@
 import { motion } from "framer-motion";
-import { Mail, Globe, Twitter, MessageCircle } from "lucide-react";
+import { Mail, Globe, Twitter } from "lucide-react";
 
 const item = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
-
-const links = [
-  { icon: Mail, label: "Email", href: "mailto:amaulana297@gmail.com", text: "amaulana297@gmail.com" },
-  { icon: Globe, label: "WordPress", href: "https://writingwolking.wordpress.com", text: "writingwolking.wordpress.com" },
-  { icon: Twitter, label: "Twitter", href: "https://x.com/amaulana8", text: "@amaulana8" },
-];
 
 export default function Contact() {
   return (
@@ -31,19 +25,16 @@ export default function Contact() {
           Let's connect. Feel free to reach out.
         </motion.p>
 
-        <motion.div variants={item} className="flex flex-col items-center gap-4 mb-8">
-          {links.map((link, i) => (
-            <a
-              key={i}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group w-fit"
-            >
-              <link.icon className="w-4 h-4 text-white/40 group-hover:text-emerald-400" />
-              <span className="text-sm text-white/60 group-hover:text-white">{link.text}</span>
-            </a>
-          ))}
+        <motion.div variants={item} className="flex items-center justify-center gap-6">
+          <a href="mailto:amaulana297@gmail.com" className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
+            <Mail className="w-5 h-5 text-white/40 group-hover:text-emerald-400" />
+          </a>
+          <a href="https://x.com/amaulana8" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
+            <Twitter className="w-5 h-5 text-white/40 group-hover:text-emerald-400" />
+          </a>
+          <a href="https://writingwolking.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group">
+            <Globe className="w-5 h-5 text-white/40 group-hover:text-emerald-400" />
+          </a>
         </motion.div>
       </motion.div>
     </section>

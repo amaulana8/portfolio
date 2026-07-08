@@ -34,7 +34,7 @@ export default function Hero() {
           variants={item}
           className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
         >
-          <span className="text-gradient">Memet</span>
+          <span className="text-gradient">amaulana8</span>
           <br />
           <span className="text-gradient-accent">Sysadmin & Network Engineer</span>
         </motion.h1>
