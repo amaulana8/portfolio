@@ -5,16 +5,15 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ParticleBackground from "./components/ParticleBackground";
 import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
-  useEffect(() => {
-    document.title = "Portfolio | Creative Developer";
-  }, []);
-
+  useEffect(() => { document.title = "amaulana8 | Sysadmin & Network Engineer"; }, []);
   return (
     <SmoothScroll>
-      <main className="min-h-screen bg-black text-white">
+      <ParticleBackground />
+      <main className="relative z-10 min-h-screen bg-transparent text-white">
         <Hero />
         <About />
         <Projects />
@@ -25,5 +24,4 @@ function App() {
     </SmoothScroll>
   );
 }
-
 export default App;

@@ -3,43 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 100%;
-    --accent: 152 81% 96%;
-    --accent-foreground: 0 0% 0%;
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 60%;
-    --border: 0 0% 14%;
-    --radius: 0.5rem;
-  }
-
-  * {
-    @apply border-white/10;
-  }
-
-  body {
-    @apply bg-black text-white antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
+  * { @apply border-white/10; }
+  body { @apply bg-black text-white antialiased; font-family: "Inter", sans-serif; }
+  html { scroll-behavior: smooth; }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-accent {
-    @apply bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-200 bg-clip-text text-transparent;
-  }
+  .text-gradient { @apply bg-gradient-to-r from-white via-white/70 to-white/20 bg-clip-text text-transparent; }
+  .text-gradient-mono { @apply bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent; }
+  .text-gradient-subtle { @apply bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent; }
+  .section-label { @apply font-mono text-xs tracking-[0.2em] uppercase text-gray-500 mb-4; }
+  .card-border { @apply border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm; }
+  .card-hover { @apply transition-all duration-500; }
+  .card-hover:hover { @apply border-white/[0.15] bg-white/[0.04]; box-shadow: 0 0 30px rgba(255,255,255,0.03); }
 }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
