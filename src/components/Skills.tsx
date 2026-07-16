@@ -48,7 +48,7 @@ export default function Skills() {
                     </div>
                     <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
                       <motion.div initial={{ width: 0 }} whileInView={{ width: `${s.level}%` }}
-                        transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }} viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] }} viewport={{ once: true }}
                         className="h-full rounded-full bg-white/20" />
                     </div>
                   </div>

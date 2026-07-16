@@ -19,7 +19,12 @@ function MagneticButton({ children, href }: { children: React.ReactNode; href: s
     <motion.a ref={ref} href={href} target="_blank" rel="noopener noreferrer"
       onMouseMove={handleMouse} onMouseLeave={handleLeave}
       style={{ x: springX, y: springY }}
-      className="p-4 rounded-full card-border hover:border-white/20 hover:bg-white/[0.06] transition-colors duration-300 block">
+      className={
+        "p-4 rounded-full card-border block " +
+        "hover:border-white/20 hover:bg-white/[0.06] " +
+        "hover:scale-105 max-md:hover:scale-100 " +
+        "transition-[border-color,background-color,transform] duration-200"
+      }>
       {children}
     </motion.a>
   );
